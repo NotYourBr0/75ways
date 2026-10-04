@@ -15,7 +15,7 @@
 
 ---
 
-## 📌 Executive Summary
+##  Executive Summary
 
 A complete, enterprise-grade Content Management System (CMS) and Agency Platform built using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js). 
 
@@ -27,7 +27,7 @@ Engineered from scratch to solve real-world agency workflows, the platform provi
 
 ---
 
-## 🏢 Internship & Engineering Highlights
+##  Internship & Engineering Highlights
 
 During my internship at **Vidhema Solutions**, I was responsible for the end-to-end design, development, and architectural decisions of this full-stack application:
 
@@ -41,7 +41,7 @@ During my internship at **Vidhema Solutions**, I was responsible for the end-to-
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```text
 75ways/
@@ -123,7 +123,7 @@ npm run dev
 
 ---
 
-## 🛠️ Tech Stack Matrix
+##  Tech Stack Matrix
 
 | Domain | Technology |
 | :--- | :--- |
