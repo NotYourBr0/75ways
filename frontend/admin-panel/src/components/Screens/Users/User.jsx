@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import '../../Styles/User/User.css';
 import { SearchContext } from '../Dashboard/homepage';
 import { AuthContext } from '../../../context/AuthContext'; 
+import { API_BASE_URL } from '../../../config/api';
 function User() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,7 +22,7 @@ const [editForm, setEditForm] = useState({ name: '', email: '', phone: '' });
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/users');
+        const response = await axios.get(`${API_BASE_URL}/api/users`);
         setUsers(response.data);
       } catch (err) {
         if (err.response) {
@@ -72,7 +73,7 @@ const handleEditSubmit = async () => {
   }
 
   try {
-    await axios.put(`http://localhost:5000/api/users/${selectedUser._id}`, {
+    await axios.put(`${API_BASE_URL}/api/users/${selectedUser._id}`, {
       name, email, phone
     });
 
@@ -114,7 +115,7 @@ const handleDelete = (user) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5000/api/users/${user._id}`);
+        await axios.delete(`${API_BASE_URL}/api/users/${user._id}`);
         toast.success("User deleted successfully");
         setUsers(prevUsers => prevUsers.filter(u => u._id !== user._id));
       } catch (err) {

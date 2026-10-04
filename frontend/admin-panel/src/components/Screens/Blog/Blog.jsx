@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { SearchContext } from '../Dashboard/homepage';
 import { AuthContext } from '../../../context/AuthContext';  
 import Swal from 'sweetalert2';
+import { API_BASE_URL } from '../../../config/api';
 
 function Blog() {
   const [showForm, setShowForm] = useState(false);
@@ -21,7 +22,7 @@ function Blog() {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/blogs');
+      const res = await axios.get(`${API_BASE_URL}/api/blogs`);
       setBlogs(res.data);
     } catch (err) {
       console.error('Failed to fetch blogs', err);
@@ -57,7 +58,7 @@ function Blog() {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5000/api/blogs/delete/${id}`);
+        await axios.delete(`${API_BASE_URL}/api/blogs/delete/${id}`);
         toast.success("Blog deleted successfully");
         fetchBlogs();
       } catch (err) {

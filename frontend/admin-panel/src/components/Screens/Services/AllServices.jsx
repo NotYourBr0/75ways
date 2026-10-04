@@ -3,6 +3,7 @@ import '../../Styles/Services/AllServices.css';
 import AddServices from './AddServices';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import { API_BASE_URL } from '../../../config/api';
 
 function AllServices() {
 const [services, setServices] = useState([]);
@@ -15,7 +16,7 @@ fetchServices();
 
 const fetchServices = async () => {
 try {
-const res = await fetch('http://localhost:5000/api/services');
+const res = await fetch(`${API_BASE_URL}/api/services`);
 if (!res.ok) {
 throw new Error(`HTTP error! status: ${res.status}`);
 }
@@ -40,7 +41,7 @@ cancelButtonText: 'Cancel'
 }).then(async (result) => {
 if (result.isConfirmed) {
 try {
-const res = await fetch(`http://localhost:5000/api/services/${id}`, {
+const res = await fetch(`${API_BASE_URL}/api/services/${id}`, {
 method: 'DELETE',
 });
 if (!res.ok) throw new Error('Delete failed');
@@ -100,7 +101,7 @@ return (
 {selectedService.image && (
 <div className="interview-image-container-right">
 <img
-src={`http://localhost:5000/uploads/services/${selectedService.image}`}
+src={`${API_BASE_URL}/uploads/services/${selectedService.image}`}
 alt={selectedService.category}
 className="interview-detail-image-passport"
 style={{borderRadius:'10px', width:'100%'}}

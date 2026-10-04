@@ -6,6 +6,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { API_BASE_URL } from '../../../config/api';
 function AddBlog({ onSubmit, onClose, blogToEdit, show }) {
   const [formData, setFormData] = useState({
     text: '',
@@ -34,13 +35,13 @@ function AddBlog({ onSubmit, onClose, blogToEdit, show }) {
 
   useEffect(() => {
     // Fetch Categories
-    fetch("http://localhost:5000/api/categories")
+    fetch(`${API_BASE_URL}/api/categories`)
       .then(res => res.json())
       .then(data => setCategories(data))
       .catch(err => console.error("Failed to fetch categories:", err));
 
     // Fetch Tags
-    fetch("http://localhost:5000/api/tags")
+    fetch(`${API_BASE_URL}/api/tags`)
       .then(res => res.json())
       .then(data => setTags(data))
       .catch(err => console.error("Failed to fetch tags:", err));
@@ -207,8 +208,8 @@ function AddBlog({ onSubmit, onClose, blogToEdit, show }) {
 
     try {
       const url = blogToEdit
-        ? `http://localhost:5000/api/blogs/update/${blogToEdit._id}`
-        : `http://localhost:5000/api/blogs/create`;
+        ? `${API_BASE_URL}/api/blogs/update/${blogToEdit._id}`
+        : `${API_BASE_URL}/api/blogs/create`;
 
       const method = blogToEdit ? 'PUT' : 'POST';
 

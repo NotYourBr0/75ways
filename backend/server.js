@@ -20,7 +20,14 @@ app.get("/ping", (req, res) => {
   res.status(200).send("OK");
 });
 
-app.use(cors());
+const corsOptions = {
+  origin: true,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'token', 'X-Requested-With', 'Accept'],
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 app.use('/uploads', express.static(path.join(__dirname, 'src', 'uploads')));
 app.get("/", (req, res) => {

@@ -5,6 +5,7 @@ import { SearchContext } from '../Dashboard/homepage';
 import { AuthContext } from '../../../context/AuthContext'; 
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import { API_BASE_URL } from '../../../config/api';
 
 const Tags = () => {
   const [tags, setTags] = useState([]);
@@ -16,7 +17,7 @@ const Tags = () => {
 
   const fetchTags = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/tags");
+      const res = await fetch(`${API_BASE_URL}/api/tags`);
       const data = await res.json();
       setTags(data);
     } catch (error) {
@@ -42,7 +43,7 @@ const Tags = () => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        await fetch(`http://localhost:5000/api/tags/${id}`, {
+        await fetch(`${API_BASE_URL}/api/tags/${id}`, {
           method: "DELETE",
         });
         toast.success("Tag deleted successfully");

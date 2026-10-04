@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { toast } from 'react-toastify';
 import { FaTimes } from 'react-icons/fa';
+import { API_BASE_URL } from '../../../config/api';
 
 const AddTag = ({ onClose, fetchTags, editingTag }) => {
   const [name, setName] = useState("");
@@ -20,8 +21,8 @@ const AddTag = ({ onClose, fetchTags, editingTag }) => {
 
     const method = editingTag ? "PUT" : "POST";
     const url = editingTag
-      ? `http://localhost:5000/api/tags/${editingTag._id}`
-      : `http://localhost:5000/api/tags`;
+      ? `${API_BASE_URL}/api/tags/${editingTag._id}`
+      : `${API_BASE_URL}/api/tags`;
 
     try {
       const res = await fetch(url, {

@@ -13,6 +13,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import './DashboardCharts.css';
+import { API_BASE_URL } from '../config/api';
 
 // Helper constant for Pie Chart label positioning
 const RADIAN = Math.PI / 180;
@@ -27,8 +28,8 @@ const DashboardCharts = () => {
     const fetchData = async () => {
       try {
         const [tagsRes, categoriesRes] = await Promise.all([
-          fetch('http://localhost:5000/api/tags'),
-          fetch('http://localhost:5000/api/categories'),
+          fetch(`${API_BASE_URL}/api/tags`),
+          fetch(`${API_BASE_URL}/api/categories`),
         ]);
 
         if (!tagsRes.ok || !categoriesRes.ok) {

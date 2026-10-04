@@ -5,6 +5,7 @@ import { SearchContext } from '../Dashboard/homepage';
 import { AuthContext } from '../../../context/AuthContext';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import { API_BASE_URL } from '../../../config/api';
 
 const ServiceCategory = () => {
   const [serviceCategories, setServiceCategories] = useState([]);
@@ -16,7 +17,7 @@ const ServiceCategory = () => {
   const fetchServiceCategories = async () => {
     try {
       // *** IMPORTANT: Adjust this URL to your actual backend endpoint for service categories ***
-      const res = await fetch("http://localhost:5000/api/servicecategories");
+      const res = await fetch(`${API_BASE_URL}/api/servicecategories`);
       const data = await res.json();
       setServiceCategories(data);
     } catch (error) {
@@ -39,7 +40,7 @@ const ServiceCategory = () => {
       if (result.isConfirmed) {
         try {
           // *** IMPORTANT: Adjust this URL to your actual backend endpoint for service categories ***
-          const response = await fetch(`http://localhost:5000/api/servicecategories/${id}`, {
+          const response = await fetch(`${API_BASE_URL}/api/servicecategories/${id}`, {
             method: "DELETE",
           });
 

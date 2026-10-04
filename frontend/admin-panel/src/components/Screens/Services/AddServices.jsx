@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import '../../Styles/Services/AddServices.css';
 import { toast } from 'react-toastify';
+import { API_BASE_URL } from '../../../config/api';
 const initialFormState = {
   category: '',
   serviceName: '', // Changed from service1 and service2
@@ -19,7 +20,7 @@ function AddServices({ existingService, onServiceSubmit, onCancel }) {
   useEffect(() => {
     const fetchServiceCategories = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/servicecategories");
+        const res = await fetch(`${API_BASE_URL}/api/servicecategories`);
         if (!res.ok) {
           throw new Error('Failed to fetch service categories');
         }
@@ -92,8 +93,8 @@ function AddServices({ existingService, onServiceSubmit, onCancel }) {
 
     try {
       const url = existingService
-        ? `http://localhost:5000/api/services/${existingService._id}`
-        : 'http://localhost:5000/api/addService';
+        ? `${API_BASE_URL}/api/services/${existingService._id}`
+        : `${API_BASE_URL}/api/addService`;
 
       const method = existingService ? 'PUT' : 'POST';
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import '../../Styles/Media/Media.css'; 
 import { SearchContext } from '../Dashboard/homepage';
+import { API_BASE_URL } from '../../../config/api';
 
 function Media() {
   const [media, setMedia] = useState([]);
@@ -13,7 +14,7 @@ function Media() {
   useEffect(() => {
     const fetchMedia = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/blogs');
+        const response = await axios.get(`${API_BASE_URL}/api/blogs`);
         setMedia(response.data);
       } catch (err) {
         if (err.response) {

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import '../../Styles/Faq/AddFaq.css'; 
+import { API_BASE_URL } from '../../../config/api';
 
 const AddFaq = ({ onClose, fetchFaqs, editingFaq }) => {
   const [question, setQuestion] = useState("");
@@ -24,8 +25,8 @@ const AddFaq = ({ onClose, fetchFaqs, editingFaq }) => {
 
     const faqData = { question, answer };
     const apiUrl = editingFaq
-      ? `http://localhost:5000/api/faqs/${editingFaq._id}`
-      : "http://localhost:5000/api/faqs";
+      ? `${API_BASE_URL}/api/faqs/${editingFaq._id}`
+      : `${API_BASE_URL}/api/faqs`;
     const method = editingFaq ? "PUT" : "POST";
     const successMessage = editingFaq ? "FAQ updated successfully!" : "FAQ added successfully!";
     const failureMessage = editingFaq ? "Failed to update FAQ." : "Failed to add FAQ.";

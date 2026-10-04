@@ -3,6 +3,7 @@ import '../../Styles/onboarding/Login.css';
 import { Link, useNavigate } from 'react-router-dom'; 
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../context/AuthContext';
+import { API_BASE_URL } from '../../../config/api';
 
 function Login({ onSubmit }) {
   const navigate = useNavigate(); 
@@ -36,7 +37,7 @@ function Login({ onSubmit }) {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/users/login', {
+      const res = await fetch(`${API_BASE_URL}/api/users/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

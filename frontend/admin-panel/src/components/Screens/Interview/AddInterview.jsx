@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import '../../Styles/Interview/AddInterview.css';
 import { toast } from 'react-toastify';
+import { API_BASE_URL } from '../../../config/api';
 const initialFormState = { Name: '', CompanyName: '', Description: '', Image: null, Position: '', CompanyURL: '' };
 
 function AddInterview({ existingInterview, onInterviewSubmit, onCancel }) {
@@ -74,8 +75,8 @@ function AddInterview({ existingInterview, onInterviewSubmit, onCancel }) {
     }
 
     const url = existingInterview
-      ? `http://localhost:5000/api/updateinterview/${existingInterview._id}`
-      : 'http://localhost:5000/api/addInterview';
+      ? `${API_BASE_URL}/api/updateinterview/${existingInterview._id}`
+      : `${API_BASE_URL}/api/addInterview`;
     const method = existingInterview ? 'PUT' : 'POST';
 
    try {

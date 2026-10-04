@@ -5,6 +5,7 @@ import { SearchContext } from '../Dashboard/homepage';
 import { AuthContext } from '../../../context/AuthContext'; 
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import { API_BASE_URL } from '../../../config/api';
 
 
 const Category = () => {
@@ -16,7 +17,7 @@ const { isAdmin } = useContext(AuthContext);
 
   const fetchCategories = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/categories");
+      const res = await fetch(`${API_BASE_URL}/api/categories`);
       const data = await res.json();
       setCategories(data);
     } catch (error) {
@@ -37,7 +38,7 @@ const { isAdmin } = useContext(AuthContext);
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        await fetch(`http://localhost:5000/api/categories/${id}`, {
+        await fetch(`${API_BASE_URL}/api/categories/${id}`, {
           method: "DELETE",
         });
         toast.success("Category deleted successfully");

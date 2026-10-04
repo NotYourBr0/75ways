@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { toast } from 'react-toastify';
 import { FaTimes } from 'react-icons/fa';
+import { API_BASE_URL } from '../../../config/api';
 
 const AddCategory = ({ onClose, fetchCategories, editingCategory }) => {
   const [name, setName] = useState("");
@@ -20,8 +21,8 @@ const AddCategory = ({ onClose, fetchCategories, editingCategory }) => {
 
     const method = editingCategory ? "PUT" : "POST";
     const url = editingCategory
-      ? `http://localhost:5000/api/categories/${editingCategory._id}`
-      : "http://localhost:5000/api/categories";
+      ? `${API_BASE_URL}/api/categories/${editingCategory._id}`
+      : `${API_BASE_URL}/api/categories`;
 
     try {
       const res = await fetch(url, {

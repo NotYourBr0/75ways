@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaUsers, FaNewspaper, FaMicrophone, FaHandshake } from 'react-icons/fa';
 import './DashboardSummary.css';
+import { API_BASE_URL } from '../config/api';
 
 const DashboardSummary = () => {
     const [summary, setSummary] = useState({
@@ -17,10 +18,10 @@ const DashboardSummary = () => {
             try {
                 // Assuming you have API endpoints for these counts
                 const [usersRes, blogsRes, interviewsRes, servicesRes] = await Promise.all([
-                    fetch('http://localhost:5000/api/users/count'),
-                    fetch('http://localhost:5000/api/blogs/count'),
-                    fetch('http://localhost:5000/api/interviews/count'),
-                    fetch('http://localhost:5000/api/services/count'),
+                    fetch(`${API_BASE_URL}/api/users/count`),
+                    fetch(`${API_BASE_URL}/api/blogs/count`),
+                    fetch(`${API_BASE_URL}/api/interviews/count`),
+                    fetch(`${API_BASE_URL}/api/services/count`),
                 ]);
 
                 const usersData = await usersRes.json();

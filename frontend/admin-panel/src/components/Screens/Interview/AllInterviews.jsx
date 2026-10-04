@@ -3,6 +3,7 @@ import '../../Styles/Interview/AllInterviews.css';
 import AddInterview from './AddInterview';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import { API_BASE_URL } from '../../../config/api';
 
 function AllInterviews() {
   const [interviews, setInterviews] = useState([]);
@@ -15,7 +16,7 @@ function AllInterviews() {
 
   const fetchInterviews = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/interviews');
+      const res = await fetch(`${API_BASE_URL}/api/interviews`);
       const data = await res.json();
       setInterviews(data);
     } catch (error) {
@@ -36,7 +37,7 @@ function AllInterviews() {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        const res = await fetch(`http://localhost:5000/api/interviews/${id}`, {
+        const res = await fetch(`${API_BASE_URL}/api/interviews/${id}`, {
           method: 'DELETE',
         });
         if (!res.ok) throw new Error('Delete failed');
@@ -89,7 +90,7 @@ function AllInterviews() {
             {selectedInterview.Image && (
               <div className="interview-image-container-right">
                 <img
-                  src={`http://localhost:5000/uploads/interviews/${selectedInterview.Image}`}
+                  src={`${API_BASE_URL}/uploads/interviews/${selectedInterview.Image}`}
                   alt={selectedInterview.Name}
                   className="interview-detail-image-passport"
                 />

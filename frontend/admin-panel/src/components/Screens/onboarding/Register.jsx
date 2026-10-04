@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../../Styles/onboarding/Register.css';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../context/AuthContext';
+import { API_BASE_URL } from '../../../config/api';
 
 function Register({ onSubmit }) {
   const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ function Register({ onSubmit }) {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://localhost:5000/api/users/register', {
+      const res = await fetch(`${API_BASE_URL}/api/users/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

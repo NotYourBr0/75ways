@@ -1,5 +1,6 @@
 // src/context/ReviewsContext.jsx
 import React, { createContext, useState, useEffect, useContext } from 'react';
+import { API_BASE_URL } from '../config/api';
 
 export const ReviewsContext = createContext();
 
@@ -16,7 +17,7 @@ export const ReviewsProvider = ({ children }) => {
     const fetchReviews = async () => {
         try {
             setLoading(true);
-            const response = await fetch('http://localhost:5000/api/reviews');
+            const response = await fetch(`${API_BASE_URL}/api/reviews`);
             if (!response.ok) {
                 throw new Error('Failed to fetch reviews');
             }
@@ -32,7 +33,7 @@ export const ReviewsProvider = ({ children }) => {
 
     const fetchUnreadCount = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/reviews/unread-count');
+            const response = await fetch(`${API_BASE_URL}/api/reviews/unread-count`);
             if (response.ok) {
                 const data = await response.json();
                 setUnreadReviewsCount(data.count);
@@ -54,7 +55,7 @@ export const ReviewsProvider = ({ children }) => {
 
     const markReviewAsRead = async (reviewId) => {
         try {
-            await fetch(`http://localhost:5000/api/reviews/${reviewId}/read`, {
+            await fetch(`${API_BASE_URL}/api/reviews/${reviewId}/read`, {
                 method: 'PUT',
             });
             setReviews(prevReviews =>

@@ -7,6 +7,7 @@ import { AuthContext } from '../../../context/AuthContext';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa'; // Icons for edit, delete, and add
+import { API_BASE_URL } from '../../../config/api';
 
 const Faq = () => {
 const [faqs, setFaqs] = useState([]);
@@ -18,7 +19,7 @@ const { searchTerm } = useContext(SearchContext) || {};
 
 const fetchFaqs = async () => {
 try {
-const res = await fetch("http://localhost:5000/api/faqs"); // Assuming a new API endpoint for FAQs
+const res = await fetch(`${API_BASE_URL}/api/faqs`); // Assuming a new API endpoint for FAQs
 const data = await res.json();
 setFaqs(data);
 } catch (error) {
@@ -39,7 +40,7 @@ cancelButtonText: 'Cancel'
 }).then(async (result) => {
 if (result.isConfirmed) {
 try {
-await fetch(`http://localhost:5000/api/faqs/${id}`, {
+await fetch(`${API_BASE_URL}/api/faqs/${id}`, {
 method: "DELETE",
 });
 toast.success("FAQ deleted successfully");
