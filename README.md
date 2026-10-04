@@ -1,4 +1,4 @@
-﻿# 75way - Full-Stack MERN CMS Platform
+﻿# Full-Stack MERN CMS Platform
 
 A production-grade, full-stack Content Management System (CMS) and Agency Web Platform built using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js).
 
