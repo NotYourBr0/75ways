@@ -116,8 +116,8 @@ npm run dev
 
 | Portal | Email | Password | Access Level |
 | :--- | :--- | :--- | :--- |
-| **Admin Panel** | `ks@gmail.com` | `123456` | Full Administrator Privileges |
-| **Client Portal** | `ks@gmail.com` | `123456` | Client / Registered User Access |
+| **Admin Panel** | `ym@gmail.com` | `123456` | User Privileges |
+| **Client Portal** | `ym@gmail.com` | `123456` | Client / User Access |
 
 *(New user self-registration is also available directly through the Client Portal).*
 
