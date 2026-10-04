@@ -1,143 +1,168 @@
 # Full-Stack MERN CMS Platform
 
-A production-grade, full-stack Content Management System (CMS) and Agency Web Platform built using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js).
+[![Internship Capstone](https://img.shields.io/badge/Internship_Project-Vidhema_Solutions-2563eb?style=for-the-badge&logo=google-classroom&logoColor=white)](https://github.com/NotYourBr0/75ways)
+[![Role](https://img.shields.io/badge/Role-Full--Stack_Developer_Intern-059669?style=for-the-badge&logo=react&logoColor=white)](https://github.com/NotYourBr0/75ways)
+[![Architecture](https://img.shields.io/badge/Architecture-Monorepo_MERN-d97706?style=for-the-badge&logo=mongodb&logoColor=white)](https://github.com/NotYourBr0/75ways)
+[![Author](https://img.shields.io/badge/Author-Kartik_Swami-7c3aed?style=for-the-badge&logo=github&logoColor=white)](https://github.com/NotYourBr0)
 
-This project was engineered by **Kartik Swami** during his **Industrial Training / Full-Stack Internship at Vidhema Solutions**, designed to deliver an end-to-end content management workflow with role-based access control, interactive analytics, and multi-portal architecture.
-
----
-
-## Project Overview
-
-The platform consists of three decoupled, independently runnable services:
-
-1. **Admin Control Panel (`frontend/admin-panel`)**  
-   A dedicated administrative suite featuring live analytics, interactive charts, content publishing (blogs, interviews, services), tag/category taxonomy management, and user review moderation.
-2. **Client CMS Portal (`frontend/user-cms-dashboard`)**  
-   A modern, public-facing portal built with React 19, Vite, and Tailwind CSS for client discovery, service browsing, blog reading, and user feedback submission.
-3. **Backend REST API (`backend/`)**  
-   A scalable Express 5.x server with MongoDB Atlas integration, JWT-based authentication, bcrypt encryption, and Cloudinary media processing.
+> [!NOTE]
+> ### 🎓 Industrial Training & Internship Capstone Project
+> **Organization:** Vidhema Solutions  
+> **Role:** Full-Stack Developer Intern  
+> **Author:** Kartik Swami ([@NotYourBr0](https://github.com/NotYourBr0))  
+> 
+> *This platform was designed, engineered, and presented as the final capstone project during my **Industrial Training / Full-Stack Internship at Vidhema Solutions**. It delivers an end-to-end, production-grade content management system with role-based access control, interactive analytics, and multi-portal architecture.*
 
 ---
 
-## Repository Structure
+## 📌 Executive Summary
 
-| Directory | Role | Key Technologies |
-| :--- | :--- | :--- |
-| **`backend/`** | REST API, Database Models & Controllers | Node.js, Express, MongoDB Atlas, JWT, Cloudinary |
-| **`frontend/admin-panel/`** | Central Administrative Dashboard | React 18, Recharts, Custom CSS, React Router |
-| **`frontend/user-cms-dashboard/`** | Client & Public Web Application | React 19, Vite, Tailwind CSS, Context API |
+A complete, enterprise-grade Content Management System (CMS) and Agency Platform built using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js). 
 
----
+Engineered from scratch to solve real-world agency workflows, the platform provides decoupled client and administrative experiences powered by a centralized REST API service:
 
-## Key Features
-
-### Admin Control Panel (`frontend/admin-panel`)
-* **Interactive Dashboard**: Real-time stats widgets and dynamic Recharts visual distributions.
-* **Content Publishing**: Full CRUD workflows for Blogs, Interviews, Categories, and Tags.
-* **Service Catalog**: Manage agency service categories, detailed offerings, and uploaded imagery.
-* **Moderation Desk**: Review customer reviews with unread count badges and status controls.
-* **Admin Profile**: Clean, focused user account card with role indicators and session logout.
-* **Pinned Responsive Layout**: Fixed sidebar navigation with isolated, smooth content scrolling.
-
-### Client CMS Portal (`frontend/user-cms-dashboard`)
-* **Modern & Fast**: Built with Vite and Tailwind CSS for instant load times and responsive design.
-* **Public Content Showcase**: Dynamic blog feed with search, category filtering, and reading views.
-* **Service & Portfolio Hub**: Detailed breakdowns of agency services and client spotlights.
-* **User Accounts & Reviews**: Secure registration, login, and authenticated review submissions.
-
-### Backend REST API (`backend/`)
-* **Modular MVC Architecture**: Clean separation between Routes, Controllers, and Mongoose Models.
-* **Stateless Auth**: JWT authentication with bcrypt password hashing and route protection.
-* **Cloud Storage**: Integrated Multer and Cloudinary pipelines for media management.
-* **Robust CRUD Endpoints**: Complete APIs for Blogs, Services, Categories, Tags, Users, and Reviews.
+* **Admin Control Panel (`frontend/admin-panel`)** — Executive administration suite with real-time analytics, CRUD workflows for blogs and services, tag/category taxonomies, and customer review moderation desk.
+* **Client CMS Portal (`frontend/user-cms-dashboard`)** — High-performance, client-facing web application built with React 19, Vite, and Tailwind CSS for service discovery, blog exploration, and user feedback.
+* **Backend REST API (`backend/`)** — Robust Express 5.x backend backed by MongoDB Atlas, stateless JWT authentication, bcrypt password hashing, and Cloudinary cloud media delivery.
 
 ---
 
-## Tech Stack
+## 🏢 Internship & Engineering Highlights
 
-| Layer | Technologies |
+During my internship at **Vidhema Solutions**, I was responsible for the end-to-end design, development, and architectural decisions of this full-stack application:
+
+| Focus Area | Engineering Implementation |
 | :--- | :--- |
-| **Frontend - Admin** | React 18, React Router v7, Recharts, React Icons, Axios |
-| **Frontend - Client** | React 19, Vite, Tailwind CSS, PostCSS, React Icons |
-| **Backend** | Node.js, Express.js (v5), Mongoose (v8), JWT, Bcrypt.js, CORS |
-| **Database** | MongoDB Atlas |
-| **Media Delivery** | Cloudinary & Multer |
+| **Monorepo Architecture** | Structured independent client, admin, and server services with decoupled dependency management. |
+| **Authentication & RBAC** | Implemented stateless JWT auth with role verification ensuring administrative endpoints remain strictly protected. |
+| **Media Pipeline** | Integrated Multer memory buffering and Cloudinary CDN for cloud-based media uploads and responsive delivery. |
+| **Data Analytics** | Built interactive distribution charts and KPI summary widgets using Recharts for business metrics monitoring. |
+| **Moderation Desk** | Created dynamic feedback review systems featuring unread-counter badges and status updates. |
 
 ---
 
-## Quick Start (Local Setup)
+## 📁 Repository Structure
+
+```text
+75ways/
+├── backend/                        # Express 5 REST API & MongoDB Atlas models
+│   ├── config/                     # Cloudinary & database connection
+│   ├── controllers/                # Business logic for auth, blogs, reviews, etc.
+│   ├── middleware/                 # JWT auth, role validation, file upload
+│   ├── models/                     # Mongoose schemas (User, Blog, Review, etc.)
+│   └── routes/                     # RESTful API route definitions
+│
+└── frontend/
+    ├── admin-panel/                # React 18 Admin CMS Suite
+    │   ├── src/components/         # Recharts analytics, navigation, modals
+    │   ├── src/pages/              # Dashboard, Blog, Review moderation pages
+    │   └── src/context/            # Admin state and auth context
+    │
+    └── user-cms-dashboard/         # React 19 + Vite + Tailwind Client Portal
+        ├── src/components/         # Navbar, hero, testimonials, service cards
+        ├── src/pages/              # Blog list, article views, contact forms
+        └── src/context/            # Client auth and cart/wishlist context
+```
+
+| Service | Directory | Port | Key Technologies |
+| :--- | :--- | :--- | :--- |
+| **Backend REST API** | `backend/` | `5000` | Node.js, Express 5, MongoDB Atlas, JWT, Cloudinary |
+| **Admin Control Panel** | `frontend/admin-panel/` | `3000` | React 18, Recharts, Custom CSS, React Router v7 |
+| **Client CMS Portal** | `frontend/user-cms-dashboard/` | `5173` | React 19, Vite, Tailwind CSS, Context API |
+
+---
+
+## 🚀 Quick Start (Local Setup)
 
 ### Prerequisites
 * **Node.js** (v18.x or v20.x)
 * **npm** (v9.x or later)
-* **MongoDB Atlas URI** (or local MongoDB instance)
+* **MongoDB Atlas URI** (or local MongoDB)
 
 ---
 
-### 1. Backend Setup
+### 1. Backend REST API
 ```bash
 cd backend
 npm install
 cp .env.example .env
 npm start
 ```
-*Backend runs on: `http://localhost:5000`*
+*Server runs on:* `http://localhost:5000`
 
 ---
 
-### 2. Admin Panel Setup
+### 2. Admin Control Panel
 ```bash
 cd frontend/admin-panel
 npm install
 npm start
 ```
-*Admin Panel runs on: `http://localhost:3000`*
+*Admin application runs on:* `http://localhost:3000`
 
 ---
 
-### 3. Client Dashboard Setup
+### 3. Client CMS Portal
 ```bash
 cd frontend/user-cms-dashboard
 npm install
 npm run dev
 ```
-*Client Portal runs on: `http://localhost:5173`*
+*Client application runs on:* `http://localhost:5173`
 
 ---
 
-## Demo Credentials
+## 🔑 Demo Credentials
 
 | Portal | Email | Password | Access Level |
 | :--- | :--- | :--- | :--- |
-| **Admin Panel** | `ks@gmail.com` | `123456` | Full Administrator Access |
-| **Client Portal** | Register a new account or use admin credentials | Standard User Access |
+| **Admin Panel** | `ks@gmail.com` | `123456` | Full Administrator Privileges |
+| **Client Portal** | `ks@gmail.com` | `123456` | Client / Registered User Access |
+
+*(New user self-registration is also available directly through the Client Portal).*
 
 ---
 
-## Core API Endpoints
+## 🛠️ Tech Stack Matrix
+
+| Domain | Technology |
+| :--- | :--- |
+| **Frontend - Admin** | React 18, React Router v7, Recharts, React Icons, Axios |
+| **Frontend - Client** | React 19, Vite, Tailwind CSS, PostCSS, Lucide Icons |
+| **Backend Framework** | Node.js, Express.js (v5), Mongoose (v8) |
+| **Authentication** | JSON Web Tokens (JWT), Bcrypt.js, CORS |
+| **Database** | MongoDB Atlas (Cloud NoSQL) |
+| **Media Delivery** | Cloudinary CDN, Multer multipart handler |
+
+---
+
+## 📡 Core API Reference
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
-| `POST` | `/api/users/login` | Authenticate user & return JWT token |
-| `POST` | `/api/users/register` | Register a new user |
-| `GET` | `/api/users` | List all registered users |
+| `POST` | `/api/users/login` | Authenticate user credentials and return signed JWT |
+| `POST` | `/api/users/register` | Register new account with hashed password |
+| `GET` | `/api/users` | List all system users (admin restricted) |
 | `PUT` | `/api/user/:id` | Update profile information |
-| `GET` | `/api/blogs` | Fetch all published blog articles |
-| `POST` | `/api/blogs/create` | Publish a new blog post |
-| `DELETE` | `/api/blogs/delete/:id` | Remove a blog post |
-| `GET` | `/api/categories` | Retrieve content category taxonomy |
-| `GET` | `/api/tags` | Retrieve tag taxonomy |
+| `GET` | `/api/blogs` | Fetch published blogs with category/tag metadata |
+| `POST` | `/api/blogs/create` | Create and publish a blog article |
+| `DELETE` | `/api/blogs/delete/:id` | Delete blog article by ID |
+| `GET` | `/api/categories` | Retrieve category taxonomies |
+| `GET` | `/api/tags` | Retrieve tag taxonomies |
 | `GET` | `/api/services` | Retrieve agency service catalog |
-| `GET` | `/api/interviews` | Retrieve interview spotlight items |
-| `GET` | `/api/reviews` | Retrieve client reviews |
-| `GET` | `/api/reviews/unread-count` | Retrieve count of pending unread reviews |
+| `GET` | `/api/interviews` | Retrieve interview spotlight posts |
+| `GET` | `/api/reviews` | Retrieve customer reviews |
+| `GET` | `/api/reviews/unread-count` | Retrieve badge counter of pending reviews |
 
 ---
 
-## Background & Credits
+## 👨‍💻 Developer & Internship Verification
 
-Developed by **Kartik Swami** as a core milestone project during **Industrial Training / Internship** at **Vidhema Solutions**.
+This project was built and submitted by **Kartik Swami** as the capstone evaluation project for industrial training:
 
-* **Author**: Kartik Swami  
-* **GitHub**: [@NotYourBr0](https://github.com/NotYourBr0)  
-* **Contact**: ks806425@gmail.com
+* **Developer:** Kartik Swami
+* **Role:** Full-Stack Developer Intern
+* **Organization:** Vidhema Solutions
+* **Education:** B.Tech Computer Science & Engineering (AIET Jaipur / RTU Kota)
+* **GitHub:** [@NotYourBr0](https://github.com/NotYourBr0)
+* **Email:** ks806425@gmail.com
