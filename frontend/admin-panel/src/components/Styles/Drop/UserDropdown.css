@@ -1,0 +1,138 @@
+/* Responsive User Dropdown */
+
+.user-dropdown-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.icon-container {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon-container:hover {
+  color: #1f2937;
+  background-color: #f3f4f6;
+}
+
+/* Bell Icon and Badge */
+.bell-icon-container {
+  position: relative;
+}
+
+.bell {
+  font-size: 1.25rem;
+}
+
+.bell-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  line-height: 1;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  padding: 0 3px;
+  box-shadow: 0 0 0 2px white;
+}
+
+/* Settings Icon */
+.cog {
+  font-size: 1.25rem;
+  animation: rotate 12s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  min-width: 190px;
+  padding: 0.5rem 0;
+  z-index: 1050;
+  animation: fadeInDown 0.2s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #4b5563;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.dropdown-menu .user-info {
+  font-weight: 600;
+  color: #111827;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 0.25rem;
+  cursor: default;
+}
+
+.dropdown-menu .user-info:hover {
+  background-color: transparent;
+}
+
+.dropdown-menu .dropdown-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

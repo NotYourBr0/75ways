@@ -1,0 +1,180 @@
+/* Responsive AllServices Styles */
+
+.all-services-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.all-services-container h2 {
+  font-size: 1.75rem;
+  color: #111827;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  text-align: left;
+  font-weight: 700;
+}
+
+/* Services Table */
+.services-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.services-table thead {
+  background-color: #f9fafb;
+}
+
+.services-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #4b5563;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.services-table tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.services-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.services-table td {
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  color: #374151;
+  vertical-align: middle;
+}
+
+.category-header-row td {
+  background-color: #eff6ff;
+  padding: 10px 16px;
+}
+
+.category-header-row h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Service Detail Card */
+.interview-detail-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.interview-detail-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.interview-text-details {
+  flex: 2;
+  min-width: 260px;
+}
+
+.interview-text-details h2 {
+  font-size: 1.85rem;
+  color: #111827;
+  margin: 0 0 1rem 0;
+  text-align: left;
+  font-weight: 700;
+}
+
+.service-name-label {
+  font-size: 1.15rem;
+  color: #374151;
+  margin: 0;
+}
+
+.interview-image-container-right {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.interview-detail-image-passport {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.service-description {
+  margin-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.5rem;
+}
+
+.service-description h3 {
+  font-size: 1.25rem;
+  color: #111827;
+  margin: 0 0 0.75rem 0;
+  font-weight: 600;
+}
+
+.service-description div {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.button-bottom-right-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+  .interview-detail-card {
+    padding: 1.25rem;
+  }
+
+  .interview-detail-content {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .all-services-container h2 {
+    font-size: 1.4rem;
+  }
+}

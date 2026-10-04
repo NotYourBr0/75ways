@@ -1,0 +1,87 @@
+.add-blogform {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width:100%;
+  margin-bottom: 40px;
+background: #ffffff;
+}
+
+.formheading {
+  
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+color: rgb(44, 86, 184);
+  text-align: center;
+}
+
+.add-blogform input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.add-blogform input:focus {
+  border-color: #007bff;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.submitbtn {
+background: #ffffff;
+color: rgb(44, 86, 184);
+  padding: 10px 18px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+.submit-btn:hover {
+background-color: rgb(234, 236, 245);
+}
+.addcategory-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addcategory-modal-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+ width: 650px;
+  position: relative;
+  z-index: 1001;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.addcategory-close-button {
+    color: rgb(44, 86, 184);
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,64 @@
+/* Responsive Dashboard Charts */
+
+.dashboard-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  gap: 1.25rem;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1.5rem;
+}
+
+.chart-item {
+  background-color: #ffffff;
+  border-radius: 0.6rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.chart-title {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.chart-loading-message,
+.chart-error-message,
+.no-data-message {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #6b7280;
+  padding: 2rem 1rem;
+}
+
+.recharts-legend-item {
+  font-size: 0.825rem;
+  color: #4b5563;
+}
+
+@media (max-width: 600px) {
+  .dashboard-grid-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .chart-item {
+    padding: 1rem 0.75rem;
+  }
+
+  .chart-title {
+    font-size: 1rem;
+  }
+}
