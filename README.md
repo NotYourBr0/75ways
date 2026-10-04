@@ -1,5 +1,8 @@
 # Full-Stack MERN CMS Platform
 
+## User Dashboard - https://75ways-pd2r.vercel.app
+## Admin Panel - https://75ways.vercel.app
+
 [![Internship Capstone](https://img.shields.io/badge/Internship_Project-Vidhema_Solutions-2563eb?style=for-the-badge&logo=google-classroom&logoColor=white)](https://github.com/NotYourBr0/75ways)
 [![Role](https://img.shields.io/badge/Role-Full--Stack_Developer_Intern-059669?style=for-the-badge&logo=react&logoColor=white)](https://github.com/NotYourBr0/75ways)
 [![Architecture](https://img.shields.io/badge/Architecture-Monorepo_MERN-d97706?style=for-the-badge&logo=mongodb&logoColor=white)](https://github.com/NotYourBr0/75ways)
