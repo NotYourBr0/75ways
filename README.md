@@ -1,4 +1,4 @@
-﻿# Full-Stack MERN CMS Platform
+# Full-Stack MERN CMS Platform
 
 A production-grade, full-stack Content Management System (CMS) and Agency Web Platform built using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js).
 
@@ -10,11 +10,11 @@ This project was engineered by **Kartik Swami** during his **Industrial Training
 
 The platform consists of three decoupled, independently runnable services:
 
-1. **Admin Control Panel (rontend/admin-panel)**  
+1. **Admin Control Panel (`frontend/admin-panel`)**  
    A dedicated administrative suite featuring live analytics, interactive charts, content publishing (blogs, interviews, services), tag/category taxonomy management, and user review moderation.
-2. **Client CMS Portal (rontend/user-cms-dashboard)**  
+2. **Client CMS Portal (`frontend/user-cms-dashboard`)**  
    A modern, public-facing portal built with React 19, Vite, and Tailwind CSS for client discovery, service browsing, blog reading, and user feedback submission.
-3. **Backend REST API (ackend/)**  
+3. **Backend REST API (`backend/`)**  
    A scalable Express 5.x server with MongoDB Atlas integration, JWT-based authentication, bcrypt encryption, and Cloudinary media processing.
 
 ---
@@ -23,15 +23,15 @@ The platform consists of three decoupled, independently runnable services:
 
 | Directory | Role | Key Technologies |
 | :--- | :--- | :--- |
-| **ackend/** | REST API, Database Models & Controllers | Node.js, Express, MongoDB Atlas, JWT, Cloudinary |
-| **rontend/admin-panel/** | Central Administrative Dashboard | React 18, Recharts, Custom CSS, React Router |
-| **rontend/user-cms-dashboard/** | Client & Public Web Application | React 19, Vite, Tailwind CSS, Context API |
+| **`backend/`** | REST API, Database Models & Controllers | Node.js, Express, MongoDB Atlas, JWT, Cloudinary |
+| **`frontend/admin-panel/`** | Central Administrative Dashboard | React 18, Recharts, Custom CSS, React Router |
+| **`frontend/user-cms-dashboard/`** | Client & Public Web Application | React 19, Vite, Tailwind CSS, Context API |
 
 ---
 
 ## Key Features
 
-### Admin Control Panel (rontend/admin-panel)
+### Admin Control Panel (`frontend/admin-panel`)
 * **Interactive Dashboard**: Real-time stats widgets and dynamic Recharts visual distributions.
 * **Content Publishing**: Full CRUD workflows for Blogs, Interviews, Categories, and Tags.
 * **Service Catalog**: Manage agency service categories, detailed offerings, and uploaded imagery.
@@ -39,13 +39,13 @@ The platform consists of three decoupled, independently runnable services:
 * **Admin Profile**: Clean, focused user account card with role indicators and session logout.
 * **Pinned Responsive Layout**: Fixed sidebar navigation with isolated, smooth content scrolling.
 
-### Client CMS Portal (rontend/user-cms-dashboard)
+### Client CMS Portal (`frontend/user-cms-dashboard`)
 * **Modern & Fast**: Built with Vite and Tailwind CSS for instant load times and responsive design.
 * **Public Content Showcase**: Dynamic blog feed with search, category filtering, and reading views.
 * **Service & Portfolio Hub**: Detailed breakdowns of agency services and client spotlights.
 * **User Accounts & Reviews**: Secure registration, login, and authenticated review submissions.
 
-### Backend REST API (ackend/)
+### Backend REST API (`backend/`)
 * **Modular MVC Architecture**: Clean separation between Routes, Controllers, and Mongoose Models.
 * **Stateless Auth**: JWT authentication with bcrypt password hashing and route protection.
 * **Cloud Storage**: Integrated Multer and Cloudinary pipelines for media management.
@@ -75,33 +75,33 @@ The platform consists of three decoupled, independently runnable services:
 ---
 
 ### 1. Backend Setup
-`ash
+```bash
 cd backend
 npm install
 cp .env.example .env
 npm start
-`
-*Backend runs on: http://localhost:5000*
+```
+*Backend runs on: `http://localhost:5000`*
 
 ---
 
 ### 2. Admin Panel Setup
-`ash
+```bash
 cd frontend/admin-panel
 npm install
 npm start
-`
-*Admin Panel runs on: http://localhost:3000*
+```
+*Admin Panel runs on: `http://localhost:3000`*
 
 ---
 
 ### 3. Client Dashboard Setup
-`ash
+```bash
 cd frontend/user-cms-dashboard
 npm install
 npm run dev
-`
-*Client Portal runs on: http://localhost:5173*
+```
+*Client Portal runs on: `http://localhost:5173`*
 
 ---
 
@@ -109,7 +109,7 @@ npm run dev
 
 | Portal | Email | Password | Access Level |
 | :--- | :--- | :--- | :--- |
-| **Admin Panel** | ks@gmail.com | 123456 | Full Administrator Access |
+| **Admin Panel** | `ks@gmail.com` | `123456` | Full Administrator Access |
 | **Client Portal** | Register a new account or use admin credentials | Standard User Access |
 
 ---
@@ -118,19 +118,19 @@ npm run dev
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
-| POST | /api/users/login | Authenticate user & return JWT token |
-| POST | /api/users/register | Register a new user |
-| GET | /api/users | List all registered users |
-| PUT | /api/user/:id | Update profile information |
-| GET | /api/blogs | Fetch all published blog articles |
-| POST | /api/blogs/create | Publish a new blog post |
-| DELETE | /api/blogs/delete/:id | Remove a blog post |
-| GET | /api/categories | Retrieve content category taxonomy |
-| GET | /api/tags | Retrieve tag taxonomy |
-| GET | /api/services | Retrieve agency service catalog |
-| GET | /api/interviews | Retrieve interview spotlight items |
-| GET | /api/reviews | Retrieve client reviews |
-| GET | /api/reviews/unread-count | Retrieve count of pending unread reviews |
+| `POST` | `/api/users/login` | Authenticate user & return JWT token |
+| `POST` | `/api/users/register` | Register a new user |
+| `GET` | `/api/users` | List all registered users |
+| `PUT` | `/api/user/:id` | Update profile information |
+| `GET` | `/api/blogs` | Fetch all published blog articles |
+| `POST` | `/api/blogs/create` | Publish a new blog post |
+| `DELETE` | `/api/blogs/delete/:id` | Remove a blog post |
+| `GET` | `/api/categories` | Retrieve content category taxonomy |
+| `GET` | `/api/tags` | Retrieve tag taxonomy |
+| `GET` | `/api/services` | Retrieve agency service catalog |
+| `GET` | `/api/interviews` | Retrieve interview spotlight items |
+| `GET` | `/api/reviews` | Retrieve client reviews |
+| `GET` | `/api/reviews/unread-count` | Retrieve count of pending unread reviews |
 
 ---
 
