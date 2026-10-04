@@ -1,267 +1,143 @@
-﻿# 75ways - Enterprise Content Management & Agency Platform
+﻿# 75way - Full-Stack MERN CMS Platform
 
-[![MERN Stack](https://img.shields.io/badge/Stack-MERN-blue.svg)](https://www.mongodb.com/)
-[![React](https://img.shields.io/badge/Frontend-React%20%7C%20Vite%20%7C%20Tailwind-61dafb.svg)](https://reactjs.org/)
-[![Node.js](https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-339933.svg)](https://nodejs.org/)
-[![Database](https://img.shields.io/badge/Database-MongoDB%20Atlas-47a248.svg)](https://www.mongodb.com/atlas)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+A production-grade, full-stack Content Management System (CMS) and Agency Web Platform built using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js).
 
-A scalable, production-ready full-stack web platform built with the **MERN Stack** (MongoDB, Express, React, Node.js). This platform provides a comprehensive content management solution featuring:
-
-1. **Admin Control Panel** (rontend/admin-panel) - An administrative dashboard with real-time analytics, content publishing, taxonomy management, user moderation, and review approvals.
-2. **Client CMS Portal** (rontend/user-cms-dashboard) - A modern client/public-facing website built with Vite and Tailwind CSS for showcasing services, blogs, interviews, and user feedback.
-3. **Scalable REST API** (ackend/) - A secure, modular Express server integrated with MongoDB Atlas, JWT authentication, and Cloudinary media processing.
+This project was engineered by **Kartik Swami** during his **Industrial Training / Full-Stack Internship at Vidhema Solutions**, designed to deliver an end-to-end content management workflow with role-based access control, interactive analytics, and multi-portal architecture.
 
 ---
 
-## Architecture & Monorepo Structure
+## Project Overview
 
-`
-75ways/
-├── backend/                        # Express.js REST API
-│   ├── src/
-│   │   ├── controller/             # Business logic & request handlers
-│   │   ├── routes/                 # Express API route declarations
-│   │   ├── schema/                 # Mongoose data models
-│   │   └── uploads/                # Local asset fallback storage
-│   ├── .env.example                # Backend environment template
-│   ├── package.json
-│   └── server.js                   # Application entry point
-│
-├── frontend/
-│   ├── admin-panel/                # React.js Admin Management Suite
-│   │   ├── public/                 # Static assets & HTML template
-│   │   ├── src/
-│   │   │   ├── components/         # Modular dashboard screens & layouts
-│   │   │   │   ├── Screens/        # Category, Tags, Blog, Services, FAQs, Profile
-│   │   │   │   └── Styles/         # Component & layout stylesheets
-│   │   │   ├── context/            # React AuthContext & ReviewsContext
-│   │   │   ├── App.js              # Application routing & route protection
-│   │   │   └── index.css           # Global layout & viewport locking
-│   │   ├── .env.example
-│   │   └── package.json
-│   │
-│   └── user-cms-dashboard/         # Vite + React + Tailwind Client App
-│       ├── public/                 # Public assets & brand icons
-│       ├── src/
-│       │   ├── components/         # Reusable UI cards, navigation, footer
-│       │   ├── context/            # Client Authentication state
-│       │   ├── pages/              # Home, Blogs, Services, Interviews, Login
-│       │   ├── App.jsx             # React Router v7 routes
-│       │   └── main.jsx            # Vite DOM mount
-│       ├── .env.example
-│       ├── tailwind.config.js      # Custom theme & utility configurations
-│       ├── vite.config.js          # Vite build configuration
-│       └── package.json
-│
-├── .gitignore                      # Universal git exclusions (node_modules, .env)
-└── README.md                       # Comprehensive project documentation
-`
+The platform consists of three decoupled, independently runnable services:
+
+1. **Admin Control Panel (rontend/admin-panel)**  
+   A dedicated administrative suite featuring live analytics, interactive charts, content publishing (blogs, interviews, services), tag/category taxonomy management, and user review moderation.
+2. **Client CMS Portal (rontend/user-cms-dashboard)**  
+   A modern, public-facing portal built with React 19, Vite, and Tailwind CSS for client discovery, service browsing, blog reading, and user feedback submission.
+3. **Backend REST API (ackend/)**  
+   A scalable Express 5.x server with MongoDB Atlas integration, JWT-based authentication, bcrypt encryption, and Cloudinary media processing.
+
+---
+
+## Repository Structure
+
+| Directory | Role | Key Technologies |
+| :--- | :--- | :--- |
+| **ackend/** | REST API, Database Models & Controllers | Node.js, Express, MongoDB Atlas, JWT, Cloudinary |
+| **rontend/admin-panel/** | Central Administrative Dashboard | React 18, Recharts, Custom CSS, React Router |
+| **rontend/user-cms-dashboard/** | Client & Public Web Application | React 19, Vite, Tailwind CSS, Context API |
 
 ---
 
 ## Key Features
 
-### 1. Admin Control Panel (rontend/admin-panel)
-* **Live Analytics & Charts**: Visual data visualization using Recharts (interactive distributions) and summary counter widgets.
-* **Content Publishing CMS**: Rich text authoring for blogs, articles, and announcements with categories and tag tagging.
-* **Service Catalog**: Manage agency service offerings, hierarchical categories, and uploaded promotional graphics.
-* **Interview Showcase**: Publish client spotlights, candidate profiles, and executive interviews.
-* **User & Review Moderation**: Real-time moderation desk with unread badges, approval queues, and user privilege controls.
-* **Refined Account Profile**: Clean account details, administrator badge, and instant session management.
-* **Modern Responsive Design**: Pinned sidebar navigation, hidden scrollbars, and isolated content scrolling.
+### Admin Control Panel (rontend/admin-panel)
+* **Interactive Dashboard**: Real-time stats widgets and dynamic Recharts visual distributions.
+* **Content Publishing**: Full CRUD workflows for Blogs, Interviews, Categories, and Tags.
+* **Service Catalog**: Manage agency service categories, detailed offerings, and uploaded imagery.
+* **Moderation Desk**: Review customer reviews with unread count badges and status controls.
+* **Admin Profile**: Clean, focused user account card with role indicators and session logout.
+* **Pinned Responsive Layout**: Fixed sidebar navigation with isolated, smooth content scrolling.
 
-### 2. Client / User CMS Dashboard (rontend/user-cms-dashboard)
-* **Blazing Fast Frontend**: Built with Vite and React 19 for instant page transitions and hot module replacement.
-* **Tailwind CSS Styling**: Utility-first, mobile-first design with polished typography and dark accents.
-* **Public Content Portal**: Dynamic blog directory, detailed article reader, and service portfolio.
-* **Client Authentication**: User registration, login, and secure authenticated reviews.
+### Client CMS Portal (rontend/user-cms-dashboard)
+* **Modern & Fast**: Built with Vite and Tailwind CSS for instant load times and responsive design.
+* **Public Content Showcase**: Dynamic blog feed with search, category filtering, and reading views.
+* **Service & Portfolio Hub**: Detailed breakdowns of agency services and client spotlights.
+* **User Accounts & Reviews**: Secure registration, login, and authenticated review submissions.
 
-### 3. Backend REST API (ackend/)
-* **Modular MVC Structure**: Clear separation between routes, controllers, and Mongoose schemas.
-* **Authentication & Security**: JSON Web Token (JWT) stateless auth, bcrypt password hashing, and CORS protection.
-* **Media Handling**: Multer middleware paired with Cloudinary integration for scalable image assets.
-* **REST Endpoints**: Comprehensive CRUD for Users, Blogs, Categories, Tags, Services, Interviews, and Reviews.
+### Backend REST API (ackend/)
+* **Modular MVC Architecture**: Clean separation between Routes, Controllers, and Mongoose Models.
+* **Stateless Auth**: JWT authentication with bcrypt password hashing and route protection.
+* **Cloud Storage**: Integrated Multer and Cloudinary pipelines for media management.
+* **Robust CRUD Endpoints**: Complete APIs for Blogs, Services, Categories, Tags, Users, and Reviews.
 
 ---
 
-## Technology Stack
+## Tech Stack
 
-| Domain | Technologies |
+| Layer | Technologies |
 | :--- | :--- |
-| **Backend** | Node.js, Express.js (v5.x), Mongoose (v8.x), JWT, Bcrypt.js, Cors, Dotenv |
-| **Admin Panel** | React (v18), React Router (v7), Recharts, React Icons, Axios, SweetAlert2, React Toastify |
-| **Client CMS** | React (v19), Vite (v7), Tailwind CSS (v3), PostCSS, React Icons |
-| **Database** | MongoDB Atlas (Cloud NoSQL) |
-| **Media & Storage** | Cloudinary & Multer Storage |
-| **Hosting Targets** | **Render** (Backend API), **Vercel** (Frontends) |
+| **Frontend - Admin** | React 18, React Router v7, Recharts, React Icons, Axios |
+| **Frontend - Client** | React 19, Vite, Tailwind CSS, PostCSS, React Icons |
+| **Backend** | Node.js, Express.js (v5), Mongoose (v8), JWT, Bcrypt.js, CORS |
+| **Database** | MongoDB Atlas |
+| **Media Delivery** | Cloudinary & Multer |
 
 ---
 
-## Local Development Setup
+## Quick Start (Local Setup)
 
 ### Prerequisites
-* **Node.js** (v18.x or v20.x recommended)
+* **Node.js** (v18.x or v20.x)
 * **npm** (v9.x or later)
-* **MongoDB** (Local instance or MongoDB Atlas connection URI)
+* **MongoDB Atlas URI** (or local MongoDB instance)
 
 ---
 
-### Step 1: Clone the Repository
+### 1. Backend Setup
 `ash
-git clone git@github.com:NotYourBr0/75ways.git
-cd 75ways
+cd backend
+npm install
+cp .env.example .env
+npm start
 `
+*Backend runs on: http://localhost:5000*
 
 ---
 
-### Step 2: Configure & Start Backend
-1. Navigate to the backend folder:
-   `ash
-   cd backend
-   `
-2. Install dependencies:
-   `ash
-   npm install
-   `
-3. Create your .env file from the template:
-   `ash
-   cp .env.example .env
-   `
-4. Update .env with your MongoDB connection string and JWT secret:
-   `env
-   PORT=5000
-   MONGO_URL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority
-   JWT_SECRET=your_super_secret_jwt_key
-   `
-5. Start the server:
-   `ash
-   npm start
-   `
-   *Backend will run at: http://localhost:5000*
+### 2. Admin Panel Setup
+`ash
+cd frontend/admin-panel
+npm install
+npm start
+`
+*Admin Panel runs on: http://localhost:3000*
 
 ---
 
-### Step 3: Configure & Start Admin Panel
-1. Open a new terminal and navigate to the admin panel:
-   `ash
-   cd frontend/admin-panel
-   `
-2. Install dependencies:
-   `ash
-   npm install
-   `
-3. Create .env (optional for local, defaults to port 5000):
-   `env
-   REACT_APP_API_URL=http://localhost:5000
-   `
-4. Start the development server:
-   `ash
-   npm start
-   `
-   *Admin Panel will run at: http://localhost:3000*
-
----
-
-### Step 4: Configure & Start User CMS Dashboard
-1. Open a third terminal and navigate to the user dashboard:
-   `ash
-   cd frontend/user-cms-dashboard
-   `
-2. Install dependencies:
-   `ash
-   npm install
-   `
-3. Create .env:
-   `env
-   VITE_API_URL=http://localhost:5000
-   `
-4. Start the Vite dev server:
-   `ash
-   npm run dev
-   `
-   *Client CMS will run at: http://localhost:5173*
+### 3. Client Dashboard Setup
+`ash
+cd frontend/user-cms-dashboard
+npm install
+npm run dev
+`
+*Client Portal runs on: http://localhost:5173*
 
 ---
 
 ## Demo Credentials
 
-| Role | Email | Password |
-| :--- | :--- | :--- |
-| **Administrator** | ks@gmail.com | kartik123 |
-| **Standard User** | Register any new account via Client Sign Up | Custom |
+| Portal | Email | Password | Access Level |
+| :--- | :--- | :--- | :--- |
+| **Admin Panel** | ks@gmail.com | 123456 | Full Administrator Access |
+| **Client Portal** | Register a new account or use admin credentials | Standard User Access |
 
 ---
 
-## Deployment Guide
-
-### 1. Deploy Backend on Render
-1. Create a **New Web Service** on [Render](https://render.com/).
-2. Connect your GitHub repository: NotYourBr0/75ways.
-3. Configure settings:
-   * **Root Directory**: ackend
-   * **Environment**: Node
-   * **Build Command**: 
-pm install
-   * **Start Command**: 
-ode server.js
-4. In **Environment Variables**, add:
-   * MONGO_URL = <Your MongoDB Atlas URI>
-   * JWT_SECRET = <Your JWT Secret>
-   * PORT = 10000 (Render will map this automatically)
-
----
-
-### 2. Deploy Admin Panel on Vercel
-1. Import project in [Vercel](https://vercel.com/).
-2. Select your 75ways repo.
-3. In **Root Directory**, choose rontend/admin-panel.
-4. Framework Preset: **Create React App**.
-5. Add Environment Variable:
-   * REACT_APP_API_URL = https://<your-render-backend-url>.onrender.com
-6. Click **Deploy**.
-
----
-
-### 3. Deploy User CMS Dashboard on Vercel
-1. Add a **New Project** in Vercel.
-2. Select your 75ways repo.
-3. In **Root Directory**, choose rontend/user-cms-dashboard.
-4. Framework Preset: **Vite**.
-5. Add Environment Variable:
-   * VITE_API_URL = https://<your-render-backend-url>.onrender.com
-6. Click **Deploy**.
-
----
-
-## REST API Overview
+## Core API Endpoints
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
-| POST | /api/users/register | Register a new user account |
 | POST | /api/users/login | Authenticate user & return JWT token |
-| GET | /api/users | List registered users |
+| POST | /api/users/register | Register a new user |
+| GET | /api/users | List all registered users |
 | PUT | /api/user/:id | Update profile information |
-| GET | /api/blogs | Retrieve all published blog posts |
+| GET | /api/blogs | Fetch all published blog articles |
 | POST | /api/blogs/create | Publish a new blog post |
-| DELETE | /api/blogs/delete/:id| Remove a blog post |
-| GET | /api/categories | Fetch category taxonomy |
-| POST | /api/categories | Create a new category |
-| GET | /api/tags | Fetch tag taxonomy |
-| POST | /api/tags | Create a new tag |
-| GET | /api/services | Retrieve agency services |
-| POST | /api/addService | Create a new service entry |
-| GET | /api/servicecategories | Retrieve service categories |
-| GET | /api/interviews | List interview spotlight entries |
-| POST | /api/addInterview | Create interview spotlight with media |
-| GET | /api/reviews | Retrieve customer reviews |
-| GET | /api/reviews/unread-count | Counter of pending unread reviews |
-| GET | /api/faqs | List published FAQs |
+| DELETE | /api/blogs/delete/:id | Remove a blog post |
+| GET | /api/categories | Retrieve content category taxonomy |
+| GET | /api/tags | Retrieve tag taxonomy |
+| GET | /api/services | Retrieve agency service catalog |
+| GET | /api/interviews | Retrieve interview spotlight items |
+| GET | /api/reviews | Retrieve client reviews |
+| GET | /api/reviews/unread-count | Retrieve count of pending unread reviews |
 
 ---
 
-## Author
+## Background & Credits
 
-**Kartik Swami**  
-Full Stack Developer Candidate  
-GitHub: [@NotYourBr0](https://github.com/NotYourBr0)
+Developed by **Kartik Swami** as a core milestone project during **Industrial Training / Internship** at **Vidhema Solutions**.
+
+* **Author**: Kartik Swami  
+* **GitHub**: [@NotYourBr0](https://github.com/NotYourBr0)  
+* **Contact**: ks806425@gmail.com
