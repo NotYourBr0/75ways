@@ -8,10 +8,10 @@
 > [!NOTE]
 > ### 🎓 Industrial Training & Internship Capstone Project
 > **Organization:** Vidhema Solutions  
-> **Role:** Full-Stack Developer Intern  
+> **Role:** Software Developer Trainee(Full-Stack)   
 > **Author:** Kartik Swami ([@NotYourBr0](https://github.com/NotYourBr0))  
 > 
-> *This platform was designed, engineered, and presented as the final capstone project during my **Industrial Training / Full-Stack Internship at Vidhema Solutions**. It delivers an end-to-end, production-grade content management system with role-based access control, interactive analytics, and multi-portal architecture.*
+> *This platform was designed, engineered, and presented as the final capstone project during my **Software Developer Trainee(Full-Stack) / Full-Stack Internship at Vidhema Solutions**. It delivers an end-to-end, production-grade content management system with role-based access control, interactive analytics, and multi-portal architecture.*
 
 ---
 
@@ -72,7 +72,7 @@ During my internship at **Vidhema Solutions**, I was responsible for the end-to-
 
 ---
 
-## 🚀 Quick Start (Local Setup)
+##  Quick Start (Local Setup)
 
 ### Prerequisites
 * **Node.js** (v18.x or v20.x)
@@ -112,7 +112,7 @@ npm run dev
 
 ---
 
-## 🔑 Demo Credentials
+##  Demo Credentials
 
 | Portal | Email | Password | Access Level |
 | :--- | :--- | :--- | :--- |
@@ -136,7 +136,7 @@ npm run dev
 
 ---
 
-## 📡 Core API Reference
+##  Core API Reference
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
@@ -156,12 +156,12 @@ npm run dev
 
 ---
 
-## 👨‍💻 Developer & Internship Verification
+##  Developer & Internship Verification
 
 This project was built and submitted by **Kartik Swami** as the capstone evaluation project for industrial training:
 
 * **Developer:** Kartik Swami
-* **Role:** Full-Stack Developer Intern
+* **Role:** Software Developer Trainee(Full-Stack) 
 * **Organization:** Vidhema Solutions
 * **Education:** B.Tech Computer Science & Engineering (AIET Jaipur / RTU Kota)
 * **GitHub:** [@NotYourBr0](https://github.com/NotYourBr0)
