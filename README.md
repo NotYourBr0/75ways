@@ -1,4 +1,4 @@
-# Full-Stack MERN CMS Platform
+# Full-Stack MERN CMS Platform (24/7 Uptime)
 
 ## User Dashboard - https://75ways-pd2r.vercel.app
 ## Admin Panel - https://75ways.vercel.app
